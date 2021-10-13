@@ -40,7 +40,7 @@ async function main() {
   console.log(result);
 }
 
-main().error(console.error);
+main().catch(console.error);
 ```
 
 ## Documentation
