@@ -140,6 +140,10 @@ export interface ISendApiMessageOptions {
      */
     subject?: string;
     /**
+     * Name of a custom (sub-)template.
+     */
+    template?: string;
+    /**
      * One or more recipients.
      */
     to: string[];
