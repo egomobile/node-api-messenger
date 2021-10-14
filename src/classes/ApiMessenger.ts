@@ -85,7 +85,7 @@ export class ApiMessenger implements IApiMessenger {
                 throw new TypeError(`Unexpected type of access_token: ${access_token}`);
             }
 
-            client = axios.create({
+            this._axiosClient = client = axios.create({
                 baseURL: baseURL + (baseURL.endsWith('/') ? '' : '/') + 'messages',
                 headers: {
                     Authorization: `Bearer ${access_token}`
