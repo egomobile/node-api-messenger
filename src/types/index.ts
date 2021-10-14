@@ -55,9 +55,27 @@ export interface IApiMessenger {
      *
      * @param {ISendApiMessageOptions[]} messages The one or more options, representing the message data.
      *
-     * @returns {Promise<ISendApiMessageResultItem[]>} The promise with the results.
+     * @returns {Promise<IApiResult<ISendApiMessageResultItem[]>>} The promise with the results.
      */
-    sendMessages(...messages: ISendApiMessageOptions[]): Promise<ISendApiMessageResultItem[]>;
+    sendMessages(...messages: ISendApiMessageOptions[]): Promise<IApiResult<ISendApiMessageResultItem[]>>;
+}
+
+/**
+ * An API result.
+ */
+export interface IApiResult<T extends any = any> {
+    /**
+     * The data.
+     */
+    data: T;
+    /**
+     * The error message, if occurred.
+     */
+    error?: string;
+    /**
+     * Operation was successful or not.
+     */
+    success: boolean;
 }
 
 /**
@@ -139,6 +157,10 @@ export interface ISendApiMessageOptions {
      * The subject.
      */
     subject?: string;
+    /**
+     * Name of a custom (sub-)template.
+     */
+    template?: string;
     /**
      * One or more recipients.
      */

@@ -18,7 +18,7 @@
 
 import axios, { AxiosInstance } from 'axios';
 import { URLSearchParams } from 'url';
-import { IApiMessenger, ICreateApiMessengerOptions, ISendApiMessageOptions, ISendApiMessageResultItem } from '../types';
+import { IApiMessenger, IApiResult, ICreateApiMessengerOptions, ISendApiMessageOptions, ISendApiMessageResultItem } from '../types';
 
 type WithClientAction<T extends any = any> = (client: AxiosInstance) => Promise<T>;
 
@@ -40,7 +40,7 @@ export class ApiMessenger implements IApiMessenger {
     /**
      * @inheritdoc
      */
-    public sendMessages(...messages: ISendApiMessageOptions[]): Promise<ISendApiMessageResultItem[]> {
+    public sendMessages(...messages: ISendApiMessageOptions[]): Promise<IApiResult<ISendApiMessageResultItem[]>> {
         return this.withClient(async (client) => {
             const response = await client.post('/v1', messages);
 
