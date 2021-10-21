@@ -99,6 +99,10 @@ export interface ICreateApiMessengerOptions {
      * The base URL of the API.
      */
     baseURL: string;
+    /**
+     * The default language.
+     */
+    language?: string;
 }
 
 /**

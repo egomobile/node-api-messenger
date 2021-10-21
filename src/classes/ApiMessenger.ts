@@ -85,11 +85,17 @@ export class ApiMessenger implements IApiMessenger {
                 throw new TypeError(`Unexpected type of access_token: ${access_token}`);
             }
 
+            const headers: any = {
+                Authorization: `Bearer ${access_token}`
+            };
+
+            if (this._options.language?.length) {
+                headers['Accept-Language'] = this._options.language;
+            }
+
             this._axiosClient = client = axios.create({
                 baseURL: baseURL + (baseURL.endsWith('/') ? '' : '/') + 'messages',
-                headers: {
-                    Authorization: `Bearer ${access_token}`
-                },
+                headers,
                 validateStatus: () => true
             });
         }

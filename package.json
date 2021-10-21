@@ -1,6 +1,6 @@
 {
     "name": "@egomobile/api-messenger",
-    "version": "0.2.1",
+    "version": "0.3.0",
     "description": "A client using an API to send messages, like emails.",
     "main": "lib/index.js",
     "engines": {

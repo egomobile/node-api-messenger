@@ -1,5 +1,9 @@
 # Change Log (@egomobile/api-messenger)
 
+## 0.3.0
+
+- add `language` prop to [ICreateApiMessengerOptions](https://egomobile.github.io/node-api-messenger/interfaces/ICreateApiMessengerOptions.html)
+
 ## 0.2.1
 
 - add `template` setting prop to [ISendApiMessageOptions](https://egomobile.github.io/node-api-messenger/interfaces/ISendApiMessageOptions.html)
